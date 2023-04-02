@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- LINK PARA O CSS DO BS -->
+  <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+
+  <title>Seus Recados</title>
+</head>
+
+<body>
+<style>
+  body{
+    background-color: rgb(149, 24, 233);
+  }
+  .btn{
+    background-color: rgb(149, 24, 233);
+    color: #ffff;
+  }
+  .btn:hover{
+    background-color: rgb(65, 24, 102);
+  color: #ffff;
+  }
+</style>
+  <main class="container-fluid">
+    <div class="row justify-content-around align-items-center">
+
+      <div class="col-12 col-sm-4 col-md-4 d-flex justify-content-center align-items-center  " id="entrarNaConta">
+        <div class="card  border-5 border-dark p-2" style="margin-top: 120px;">
+         
+          <div class="card-body">
+            <h5 class="card-title">Entre em sua conta</h5>
+            <form id="userLogin">
+           
+              <div class="mb-3">
+                <label for="emailLogin" class="form-label">E-mail:</label>
+                <input type="email" class="form-control" id="emailLogin" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="passwordLogin" class="form-label">Senha:</label>
+                <input type="password" class="form-control" id="passwordLogin">
+              </div>
+              <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-lg mt-2 mb-3 w-100">Entrar</button> 
+              </div>
+              <p class="pb-lg-2 text-center" style="color: #000000;">Ainda não tem uma conta?
+                <a href="#!" style="color:rgb(149, 24, 233);" data-bs-toggle="modal" data-bs-target="#modalNewUser">Crie sua conta</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+  <div class="modal" id="modalNewUser" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Cadastrar Contato</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar Modal"></button>
+        </div>
+        <form class="needs-validation" id="formNewUser" novalidate>
+          <div class="modal-body">
+           
+
+            <div class="mb-3">
+              <label for="nameUser" class="form-label">Nome:</label>
+
+              <input type="text" name="nameUser" id="nameUser" class="form-control" required minlength="3">
+
+              <div class="invalid-feedback">
+                Digite algum nome válido. 
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="mailUser" class="form-label">E-Mail:</label>
+
+              <input type="email" name="mailUser" id="mailUser" class="form-control" required minlength="5"
+                placeholder="nome@nome.com">
+
+              <div class="invalid-feedback">
+                Digite algum e-mail válido.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="passwordUser" class="form-label">Senha:</label>
+
+              <input type="password" name="passwordUser" id="passwordUser" class="form-control" required minlength="4">
+
+              <div class="invalid-feedback">
+                Digite uma senha de no mínimo 4 caracteres.
+              </div>
+            </div>
+          </div>
+
+
+          <div class="modal-footer">
+            <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JS DO BS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"></script>
+  <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- MEU JS-->
+  <script src="./JS/index.js"></script>
+</body>
+
+</html>

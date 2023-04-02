@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- LINK PARA O CSS DO BS -->
+  <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <!-- MEU CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <title>Seus Recados</title>
+</head>
+
+<body>
+  <style>
+    body{
+      background-color: #fff;
+    }
+    .but {
+      margin-left: 20px;
+      background-color: rgb(149, 24, 233);
+    }
+    .but:hover{
+      background-color: rgb(187, 125, 228);
+    }
+    .botao{
+      margin-top: 398px;
+      background-color: rgb(149, 24, 233);
+    }
+    .botao:hover{
+      background-color: rgb(187, 125, 228);
+    }
+  </style>
+  <br>
+  <a href="/index.html"> <button class=" but btn border border-dark ">
+      <span class="circle" aria-hidden="true">
+        <span class="icon arrow"></span>
+      </span>
+      <span class="button-text">início</span>
+    </button></a>
+  <main class="container">
+    <br>
+
+    <p class="h1">Recados</p>
+    <hr>
+    <br>
+    <section class="row g-3 ms-2 mt-2" id="list-anotacoes">
+    </section>
+  </main>
+
+  <button class="botao btn btn-danger border border-dark position-fixed float-button rounded-circle end-0" data-bs-toggle="modal"
+    data-bs-target="#modal-cadastro">
+    <i class="bi bi-plus-lg"></i>
+  </button>
+
+
+  <div id="modal-cadastro" class="modal " tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+    <p class="h3 text-light">Crie um Recado</p>
+          <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <form id="form-cadastro" class="needs-validation" novalidate>
+          <div class="modal-body ">
+            <div class="mb-3 text-light">
+              <label for="name" class="form-label">Título:</label>
+
+              <input type="text" name="name" id="name" class="form-control" required minlength="3">
+
+              <div class="invalid-feedback text-danger">
+                Digite algum nome válido. No mínimo 4 caracteres.
+              </div>
+            </div>
+            <div class="mb-3 text-light">
+              <label for="descreva" class="form-label">Descreva seu recado.</label>
+
+              <input type="text" name="descreva" id="descreva" class="form-control" required>
+              <div class="invalid-feedback text-danger">
+                Descreva seu recado.
+              </div>
+            </div>
+            <div class="mb-3 text-light">
+              <label for="data" class="form-label">Informe uma data!</label>
+
+              <input type="date" name="data" id="data" class="form-control" required>
+
+              <div class="invalid-feedback">
+                Informe uma data!
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-apagar" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title text-light">Apagar Recado</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body text-light">
+         Tem certeza que quer excluir seu recado?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="confirmar-exclusao">Sim</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-atualizar" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title text-light">Atualizar Recado:</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <form id="form-atualizar" class="needs-validation" novalidate>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="name" class="form-label text-light">Nome do Recado</label>
+
+              <input type="text" name="name" id="name-update" class="form-control" required minlength="3">
+
+              <div class="invalid-feedback text-danger">
+                Digite algum nome válido. No mínimo 4 caracteres.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="descreva" class="form-label text-light">Descreva seu Recado</label>
+
+              <input type="text" name="descreva" id="descreva-update" class="form-control" required>
+
+              <div class="invalid-feedback text-danger>
+                Descreva seu Recado
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="data" class="form-label text-light">Informe alguma data!</label>
+
+              <input type="date" name="data" id="data-update" class="form-control" required>
+
+              <div class="invalid-feedback text-danger">
+                Informe uma data!
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="reset" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Atualizar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container position-fixed top-0 end-0 p-3" id="container-notificacao"></div>
+
+  <!-- JS DO BS -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"></script>
+  <!-- MEU JS-->
+  <script src="./JS/recados.js"></script>
+</body>
+
+</html>
